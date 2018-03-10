@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html>
+
+<title>Remember: Login</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+
+<style>
+body,h1,h2{font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+p {line-height: 2}
+.bgimg, .bgimg2 {
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+.bgimg {background-color:#7FFFD4;}
+.left{
+    text-align: left;
+}
+
+/* Remove margins and padding from the list */
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the list items */
+ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  list-style-type: none;
+  background: #eee;
+  font-size: 18px;
+  transition: 0.2s;
+
+  /* make the list items unselectable */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Set all odd list items to a different color (zebra-stripes) */
+ul li:nth-child(odd) {
+  background: #f9f9f9;
+}
+
+/* Darker background-color on hover */
+ul li:hover {
+  background: #ddd;
+}
+
+/* When clicked on, add a background color and strike out text */
+ul li.checked {
+  background: #888;
+  color: #fff;
+  text-decoration: line-through;
+}
+
+/* Add a "checked" mark when clicked on */
+ul li.checked::before {
+  content: '';
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+
+/* Style the close button */
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+}
+
+.close:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+</style>
+
+
+
+<script>
+
+//display dates
+//but this whole section did not work
+
+function myFunction() {
+    var checkBox = document.getElementById("mon");
+    var text = document.getElementById("text1");
+    if (checkBox.checked == true){
+        text1.style.display = "block";
+    } else {
+       text.style.display = "none";
+    }
+}
+
+function myFunction() {
+    var checkBox = document.getElementById("tue");
+    var text = document.getElementById("text2");
+    if (checkBox.checked == true){
+        text.style.display = "block";
+    } else {
+       text.style.display = "none";
+    }
+}
+
+function myFunction() {
+    var checkBox = document.getElementById("wed");
+    var text = document.getElementById("text3");
+    if (checkBox.checked == true){
+        text.style.display = "block";
+    } else {
+       text.style.display = "none";
+    }
+}
+
+function myFunction() {
+    var checkBox = document.getElementById("thu");
+    var text = document.getElementById("text4");
+    if (checkBox.checked == true){
+        text.style.display = "block";
+    } else {
+       text.style.display = "none";
+    }
+}
+
+function myFunction() {
+    var checkBox = document.getElementById("fri");
+    var text = document.getElementById("text5");
+    if (checkBox.checked == true){
+        text.style.display = "block";
+    } else {
+       text.style.display = "none";
+    }
+}
+
+function myFunction() {
+    var checkBox = document.getElementById("sat");
+    var text = document.getElementById("text6");
+    if (checkBox.checked == true){
+        text.style.display = "block";
+    } else {
+       text.style.display = "none";
+    }
+}
+
+function myFunction() {
+    var checkBox = document.getElementById("sun");
+    var text = document.getElementById("text7");
+    if (checkBox.checked == true){
+        text.style.display = "block";
+    } else {
+       text.style.display = "none";
+    }
+}
+
+
+// Create a "close" button and append it to each list item
+
+var myNodelist = document.getElementsByTagName("LI");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  myNodelist[i].appendChild(span);
+}
+
+// Click on a close button to hide the current list item
+
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
+
+// Add a "checked" symbol when clicking on a list item
+
+var list = document.querySelector('ul');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
+
+// Create a new list item when clicking on the "Add" button
+
+function newElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("myUL").appendChild(li);
+  }
+  document.getElementById("myInput").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+}
+
+</script>
+
+
+
+<body>
+
+<!-- Header / Home-->
+
+<header class="w3-display-container w3-wide bgimg w3-grayscale-min" id="home">
+<div class="w3-display-center w3-padding-32">
+    <div class="w3-bar w3-border">
+      <a href="feedback" class="w3-bar-item w3-button">Feedback</a>
+    </div>
+
+  <div class="w3-display-middle w3-text-black w3-center">
+    <h1 class="w3-jumbo">Remember!</h1>
+
+    <p id="text1" style="display:none">Monday</p>
+    <p id="text2" style="display:none">Tuesday</p>
+    <p id="text3" style="display:none">Wednesday</p>
+    <p id="text4" style="display:none">Thursday</p>
+    <p id="text5" style="display:none">Friday</p>
+    <p id="text6" style="display:none">Saturday</p>
+    <p id="text7" style="display:none">Sunday</p>
+
+    <!-- Weather Gadget from AccuWeather -->
+
+    <a href="https://www.accuweather.com/en/us/new-york-ny/10007/weather-forecast/349727" class="aw-widget-legal">
+    <!--
+    By accessing and/or using this code snippet, you agree to AccuWeather’s terms and conditions (in English) which can be found at https://www.accuweather.com/en/free-weather-widgets/terms and AccuWeather’s Privacy Statement (in English) which can be found at https://www.accuweather.com/en/privacy.
+    -->
+    <div class="w3-display-center">
+    </a><div id="awcc1520343268934" class="aw-widget-current"  data-locationkey="" data-unit="c" data-language="en-us" data-useip="true" data-uid="awcc1520343268934"></div><script type="text/javascript" src="https://oap.accuweather.com/launch.js"></script>
+    </div>
+
+    <!-- Display list of things to bring, entered by users -->
+
+    <ul id="myUL">
+    </ul>
+
+  </div>
+</div>
+</header>
+
+
+
+<!-- Navbar (sticky bottom) -->
+
+<div class="w3-bottom w3-hide-small">
+  <div class="w3-bar w3-white w3-center w3-padding w3-opacity-min w3-hover-opacity-off">
+    <a href="#home" style="width:33.3%" class="w3-bar-item w3-button w3-hover-black">Reminder/Weather</a>
+    <a href="#rsvp" style="width:33.3%" class="w3-bar-item w3-button w3-hover-black">Add</a>
+    <a href="#list" style="width:33.3%" class="w3-bar-item w3-button w3-hover-black">List of Things for Every Week</a>
+  </div>
+</div>
+
+<!-- Add reminder section -->
+
+<div class="w3-container w3-padding-64 w3-black w3-center w3-wide" id="rsvp">
+  <h1 class="w3-text-white">Add Reminder</h1>
+  <p class="w3-text-white w3-large">Please keep it short and sweet!</p>
+  <p class="w3-xlarge">
+    <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-round w3-white w3-text-black w3-opacity-off w3-hover-opacity-off" style="padding:8px 60px">Add</button>
+  </p>
+</div>
+
+<!-- Add reminder modal -->
+
+<div id="id01" class="w3-modal">
+  <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="padding:32px;max-width:600px">
+    <div class="w3-container w3-white w3-center">
+      <h2 id="myDIV" class="w3-wide">Do not forget...</h2>
+        <input class="w3-input w3-border" type="text" placeholder="Thing(s) to bring" name="thing" id="myInput">
+        </div>
+
+        <form>
+        <h2 class="w3-wide">Frequency of reminders</h2>
+            <input type="checkbox" name="date" value="monday" id="mon"  onclick="myFunction()"> Monday <br>
+            <input type="checkbox" name="date" value="tuesday" id="tue"  onclick="myFunction()"> Tueday <br>
+            <input type="checkbox" name="date" value="wednesday" id="wed"  onclick="myFunction()"> Wednesday <br>
+            <input type="checkbox" name="date" value="thursday" id="thu"  onclick="myFunction()"> Thursday <br>
+            <input type="checkbox" name="date" value="friday" id="fri"  onclick="myFunction()"> Friday <br>
+            <input type="checkbox" name="date" value="saturday" id="sat"  onclick="myFunction()"> Saturday <br>
+            <input type="checkbox" name="date" value="sunday" id="sun"  onclick="myFunction()"> Sunday
+        </br>
+        </form>
+
+      <div class="w3-row">
+        <div class="w3-half">
+          <span onclick="newElement()" type="submit" value="Edit" class="w3-button w3-block w3-black w3-text-white">Add</button>
+        </div>
+        <div class="w3-half">
+          <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-button w3-block w3-light-grey">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- List of Things -->
+
+<div class="w3-container w3-padding-64 bgimg w3-center w3-wide" id="list">
+  <h1>Here They Are!</h1>
+
+</div>
+
+<!-- Footer -->
+
+<footer class="w3-center w3-black w3-padding-16">
+  <p>Created by DHS 2018'5C33, Zheng Yi, Gao Ruipeng, Teo Jing Yi</p>
+</footer>
+<div class="w3-hide-small" style="margin-bottom:20px"> </div>
+
+</body>
+</html>
